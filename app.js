@@ -12,10 +12,14 @@ const userRoutes = require("./routes/user");
 //---import de body-parser----------
 const bodyParser = require("body-parser");
 
+const cors = require('cors')
+
 // Création de l application express
 const app = express();
 //------logger les requetes et les reponse
 app.use(morgan("dev"));
+
+app.use(cors);
 
 //----mise en place du CORS----------
 app.use((req, res, next)=>{
@@ -31,7 +35,6 @@ res.setHeader(
 );
 next();
 });
-
 
 app.use(bodyParser.json());
 

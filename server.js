@@ -7,12 +7,8 @@ console.log(http);
 //----import de l'app.js---------
 const app = require("./app");
 
-//----import du package environnement
-const dotenv = require("dotenv");
-const result = dotenv.config();
-
-app.set("port", process.env.PORT);
+app.set("port", 3000);
 
 
 const server =http.createServer(app);
-server.listen( process.env.PORT);
+server.listen( 3000);
