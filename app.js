@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
     res.send('REST API PROJET 6 OPEN CLASSROOMS!')
   });
 
-app.use('/pictures', express.static(path.join(__dirname, 'pictures')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 //---Route d'authanfication----
 app.use("/api/auth", userRoutes);
 
