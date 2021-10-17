@@ -6,20 +6,26 @@ const morgan = require("morgan")
 //--import mongoose----
 const moongoose = require("./db/db");
 
+const path = require('path');
+
 //-------import des routes----------
 const userRoutes = require("./routes/user");
 
-//---import de body-parser----------
+const saucesRoutes= require("./routes/sauce")
+
+//---import de body-parser----------mjku
 const bodyParser = require("body-parser");
 
-const cors = require('cors')
+const cors = require('cors');
+
 
 // Création de l application express
 const app = express();
+
 //------logger les requetes et les reponse
 app.use(morgan("dev"));
 
-app.use(cors);
+app.use(cors());
 
 //----mise en place du CORS----------
 app.use((req, res, next)=>{
@@ -39,9 +45,16 @@ next();
 app.use(bodyParser.json());
 
 
+
+app.get('/', (req, res) => {
+    res.send('REST API PROJET 6 OPEN CLASSROOMS!')
+  });
+
+app.use('/pictures', express.static(path.join(__dirname, 'pictures')));
 //---Route d'authanfication----
 app.use("/api/auth", userRoutes);
 
+app.use('/api/sauces', saucesRoutes);
 
 // Exportation de l'app.js
 module.exports= app;

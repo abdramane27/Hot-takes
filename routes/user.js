@@ -10,7 +10,7 @@ const router = express.Router();
 
 //---Route du sign up----------
 router.post("/signup", userCtlr.signup);
-router.post("/login", userCtlr.signup);
+router.post("/login", userCtlr.login);
 
 
 
