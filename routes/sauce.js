@@ -11,7 +11,7 @@ const sauceCtlr = require('../controllers/sauce');
 
 router.get('/',auth, sauceCtlr.getAllSauce);
 
-router.post('/',auth, sauceCtlr.createSauce);
+router.post('/',auth, multer, sauceCtlr.createSauce);
 
 router.get('/:id',auth, sauceCtlr.getOneSauce);
 
