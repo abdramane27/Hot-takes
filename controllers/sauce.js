@@ -49,27 +49,27 @@ exports.createLike= (req,res)=> {
         _id: req.params.id
     })
 .then( sauce =>{
-    
-    if(req.body.like== -1) {
+    //l'utilisateur n'aime pas
+    if(req.body.like== 1) {
         sauce.dislikes++;
         sauce.usersDisliked.push(req.body.userId);
         sauce.save();
     
-    }
+    } //l'utilisateur aime 
     if(req.body.like== 1){
         sauce.likes++;
         sauce.usersLiked.push(req.body.userId);
         sauce.save();
     }
-    
+    //l'utilisateur s'est trompé 
     if(req.body.like == 0) {
-        if (sauce.usersLiked.indexOf(req.body.userId) |= -1){
+        if (sauce.usersLiked.indexOf(req.body.userId) != -1){
         sauce.likes--;
         sauce.usersLiked.splice(sauce.usersLiked.indexOf(req.body.userId), 1);
     }
     else{
-        sauce.dislikes-- ,
-        sauce.usersDisliked.usersDisliked.splice(sauce.usersDisliked.indexOf(req.body.userId), 1);
+        sauce.dislikes--;
+        sauce.usersDisliked.splice(sauce.usersDisliked.indexOf(req.body.userId), 1);
     }
         sauce.save();
     }

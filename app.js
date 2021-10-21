@@ -13,7 +13,7 @@ const userRoutes = require("./routes/user");
 
 const saucesRoutes= require("./routes/sauce")
 
-//---import de body-parser----------mjku
+//---import de body-parser----------
 const bodyParser = require("body-parser");
 
 const cors = require('cors');
