@@ -14,6 +14,8 @@ The, clone this repo and run `npm install`.
 
 ## Usage ##
 
+Clonez ce répertoire puis lancer votre invite de commande entrez "cd Back-end" une fois dans le dossier Back-end entrez "node server". Cela lancera le server
+ensuite lancez une nouvelle invite de commande puis entrez "cd Front-end" une fois dans le dossier Front-end 
 Run `npm start`. This should both run the local server and launch your browser.
 
 If your browser fails to launch, or shows a 404 error, navigate your browser to http://localhost:8080.
